@@ -1,8 +1,68 @@
-//require fs
-const fs = require('fs');
+//add inquirer
+const inquirer = require('inquirer');
+console.log(inquirer);
 
-//require generateReadMe()
-const generateReadMe = require('./src/readme-template.js');
+inquirer
+    .prompt([
+        {
+            type: 'input',
+            name: 'project',
+            message: 'What is the name of your project?' 
+        },
+        {
+            type: 'input',
+            name: 'desc',
+            message: 'Describe your project: '
+        },
+        {
+            type: 'input',
+            name: 'install',
+            message: 'Installation instructions: '
+        },
+        {
+            type: 'input',
+            name: 'usage',
+            message: 'Usage instructions: '
+        },
+        {
+            type: 'checkbox',
+            name: 'license',
+            message: 'Please select license: ',
+            choices: ['yes', 'no']
+        }, 
+        {
+            type: 'input',
+            name: 'cont',
+            message: 'Contribution guidelines: '
+        },
+        {
+            type: 'input',
+            name: 'test',
+            message: 'Tests: '
+        },
+        {
+            type: 'input',
+            name: 'username',
+            message: 'GitHub username: '
+        },
+        {
+            type: 'input',
+            name: 'link',
+            message: 'Link to GitHub profile: '
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Email: '
+        }
+    ])
+    .then(answers => console.log(answers));
+
+// //require fs
+// const fs = require('fs');
+
+// //require generateReadMe()
+// const generateReadMe = require('./src/readme-template.js');
 
 //capture user input
 const projectDataArgs = [process.argv.slice(2, process.argv.length)];
@@ -18,11 +78,11 @@ console.log('project: ', project);
 // printProjectData(projectDataArgs);
 
 
-//function to write readme file
-fs.writeFile('./README.md', generateReadMe(project), err => {
-    if (err) throw new Error(err);
-    console.log('ReadMe complete! Check out README.md to see the output!')
-})
+// //function to write readme file
+// fs.writeFile('./README.md', generateReadMe(project), err => {
+//     if (err) throw new Error(err);
+//     console.log('ReadMe complete! Check out README.md to see the output!')
+// })
 
 //STARTER CODE
 // // array of questions for user
