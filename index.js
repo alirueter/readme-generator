@@ -1,11 +1,15 @@
 //require fs
 const fs = require('fs');
 
+//require generateReadMe()
+const generateReadMe = require('./src/readme-template.js');
+
 //capture user input
-const projectDataArgs = process.argv.slice(2, process.argv.length);
+const projectDataArgs = [process.argv.slice(2, process.argv.length)];
 
 //extract arugments and store as distinct variables
 const project = projectDataArgs[0];
+console.log('project: ', project);
 
 // const printProjectData = projectDataArr => {
 //     projectDataArr.forEach(projectItem => console.log(projectItem));
@@ -13,30 +17,10 @@ const project = projectDataArgs[0];
 
 // printProjectData(projectDataArgs);
 
-const generateReadMe = (project) => {
-    return `
-        # ${project}
 
-        ## Description
-
-        ## Table of Contents
-
-        ## Installation
-
-        ## Usage
-
-        ## License
-
-        ## Contributing
-
-        ## Tests
-
-        ## Questions
-    `
-};
-
-fs.writeFile('README.md', generateReadMe(project), err => {
-    if (err) throw err;
+//function to write readme file
+fs.writeFile('./README.md', generateReadMe(project), err => {
+    if (err) throw new Error(err);
     console.log('ReadMe complete! Check out README.md to see the output!')
 })
 

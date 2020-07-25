@@ -1,5 +1,6 @@
-
-        # testing
+const generateReadMe = (project) => {
+    return `
+        # ${project}
 
         ## Description
 
@@ -16,4 +17,7 @@
         ## Tests
 
         ## Questions
-    
+     `
+};
+
+module.exports = generateReadMe;
