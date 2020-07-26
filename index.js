@@ -1,9 +1,19 @@
+// require path
+const path = require('path');
+
+//require fs
+const fs = require('fs');
+
 //add inquirer
 const inquirer = require('inquirer');
 
-    const promptUser = () => {
-        return inquirer
-        .prompt([
+//require generateReadMe()
+const templateData = require('./src/readme-template.js');
+
+    //const promptUser = () => {
+        //return inquirer
+        //.prompt([
+            const questions = [
             {
                 type: 'input',
                 name: 'project',
@@ -61,10 +71,10 @@ const inquirer = require('inquirer');
                 }
             },
             {
-                type: 'confirm',
+                type: 'checkbox',
                 name: 'license',
                 message: 'Please select license: (Required)',
-                default: false
+                choices: ['MIT', 'Other'],
             }, 
             {
                 type: 'input',
@@ -110,20 +120,6 @@ const inquirer = require('inquirer');
             },
             {
                 type: 'input',
-                name: 'link',
-                message: 'Link to GitHub profile: (Required)',
-                validate: linkInput => {
-                    if (linkInput) {
-                        return true;
-                    }
-                    else {
-                        console.log('Please enter the link to your GitHub profile!');
-                        return false;
-                    }
-                }
-            },
-            {
-                type: 'input',
                 name: 'email',
                 message: 'Email: (Required)',
                 validate: emailInput => {
@@ -135,23 +131,43 @@ const inquirer = require('inquirer');
                         return false;
                     }
                 }
-            }
-        ]);
-    };
+            }];
+       // ]);
+   // };
 
-    promptUser().then(answers => console.log(answers));
+    // promptUser()
+    //     .then(projectData => {
+    //         const pageReadMe = generateReadMe(projectData);
+        
+    //         fs.writeFile('./README.md', pageReadMe, err => {
+    //           if (err) throw new Error(err);
+    //         });
+    //     });
 
-// //require fs
-// const fs = require('fs');
+function writeToFile(fileName, data) {
+    return fs.writeFileSync(path.join(process.cwd(), fileName), data)
+}
 
-// //require generateReadMe()
-// const generateReadMe = require('./src/readme-template.js');
+function init() {
+    inquirer.prompt(questions)
+    .then((inquirerResponses) => {
+        console.log("Generating Readme");
+        writeToFile("README.md", templateData({...inquirerResponses}));
+    })
+}
 
-//capture user input
-const projectDataArgs = [process.argv.slice(2, process.argv.length)];
+// function call to initialize program
+init();
+
+
+
+
+
+// //capture user input
+// const projectDataArgs = [process.argv.slice(2, process.argv.length)];
 
 //extract arugments and store as distinct variables
-const project = projectDataArgs[0];
+//const project = projectDataArgs[0];
 
 // const printProjectData = projectDataArr => {
 //     projectDataArr.forEach(projectItem => console.log(projectItem));
@@ -161,7 +177,7 @@ const project = projectDataArgs[0];
 
 
 // //function to write readme file
-// fs.writeFile('./README.md', generateReadMe(project), err => {
+// fs.writeFile('./README.md', generateReadMe(templateData), err => {
 //     if (err) throw new Error(err);
 //     console.log('ReadMe complete! Check out README.md to see the output!')
 // })
@@ -181,5 +197,4 @@ const project = projectDataArgs[0];
 
 // }
 
-// // function call to initialize program
-// init();
+
