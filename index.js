@@ -74,7 +74,7 @@ const templateData = require('./src/readme-template.js');
                 type: 'checkbox',
                 name: 'license',
                 message: 'Please select license: (Required)',
-                choices: ['MIT', 'Other'],
+                choices: ['MIT', 'GPLv3', 'ISC', 'None'],
             }, 
             {
                 type: 'input',

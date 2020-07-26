@@ -37,10 +37,10 @@ module.exports = templateData = data => {
 
 // templateData();
 
-// function getBadge(license) {
-//     if (license !== "None") {
-//         return `[![License: ${data.license}](https://img.shields.io/badge/License-${data.license})]`
-//     }  
-// }
+function getBadge(license) {
+    if (license !== "None") {
+        return `[![License: ${data.license}](https://img.shields.io/badge/License-${data.license})]`
+    }  
+}
 
-// getBadge();
+getBadge();
