@@ -1,5 +1,5 @@
 
-# Project Name
+# Project
 
 ## Description
 Description
@@ -13,15 +13,15 @@ Instructions
 Instructions
 
 ## License
-MIT
-[![Badge](https://img.shields.io/badge/License-MIT)]
-[License Information](https://opensource.org/licenses/MIT)
+Apache-2.0
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache-2.0)]
+[License Information](https://opensource.org/licenses/Apache-2.0)
 
 ## Contributing
-None
+N/A
 
 ## Tests
-None
+N/A
 
 ## Questions
 alirueter

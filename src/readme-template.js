@@ -35,7 +35,7 @@ If you have any questions, you can contact me at ${data.email}.
 
 function getBadge(license) {
     if (license !== "None") {
-        return `[![Badge](https://img.shields.io/badge/License-${license})]`
+        return `[![License: ${license}](https://img.shields.io/badge/License-${license})]`
     } 
 };
 
