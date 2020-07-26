@@ -41,6 +41,6 @@ function getBadge(license) {
 
 function getLink(link) {
     if (link !=="None") {
-        return `[![License Information](https://opensource.org/licenses/${link})]`
+        return `[License Information](https://opensource.org/licenses/${link})`
     }
 };
