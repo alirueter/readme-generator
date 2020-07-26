@@ -72,7 +72,7 @@ const questions = [
     type: 'checkbox',
     name: 'license',
     message: 'Please select license: (Required)',
-    choices: ['MIT', 'Apache-2.0', 'ISC', 'None'],
+    choices: ['MIT', 'ISC', 'Other', 'None'],
 }, 
 {
     type: 'input',
