@@ -2,45 +2,45 @@ module.exports = templateData = data => {
     console.log(templateData);
 
     return `
-        # ${data.project}
+# ${data.project}
 
-        ## Description
-        ${data.desc}
+## Description
+${data.desc}
 
-        ## Table of Contents
+## Table of Contents
 
-        ## Installation
-        ${data.install}
+## Installation
+${data.install}
 
-        ## Usage
-        ${data.usage}
+## Usage
+${data.usage}
 
-        ## License
-        ${data.license}
+## License
+${data.license}
+${getBadge(data.license)}
+${getLink(data.license)}
 
-        ## Contributing
-        ${data.cont}
+## Contributing
+${data.cont}
 
-        ## Tests
-        ${data.test}
+## Tests
+${data.test}
 
-        ## Questions
-        ${data.username}
-        [GitHub Profile: ](https://github.com/${data.username})
-        If you have any questions, you can contact me at ${data.email}.
+## Questions
+${data.username}
+[GitHub Profile: ](https://github.com/${data.username})
+If you have any questions, you can contact me at ${data.email}.
     `;
 };
 
-// function templateData(data) {
-//     return `# ${data.title}`
-// }
-
-// templateData();
-
 function getBadge(license) {
     if (license !== "None") {
-        return `[![License: ${data.license}](https://img.shields.io/badge/License-${data.license})]`
-    }  
-}
+        return `[![License: ${license}](https://img.shields.io/badge/License-${license})]`
+    } 
+};
 
-getBadge();
+function getLink(link) {
+    if (link !=="None") {
+        return `[![License Information](https://opensource.org/licenses/${link})]`
+    }
+};
