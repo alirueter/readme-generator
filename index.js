@@ -7,53 +7,134 @@ const inquirer = require('inquirer');
             {
                 type: 'input',
                 name: 'project',
-                message: 'What is the name of your project?' 
+                message: 'What is the name of your project? (Required)',
+                validate: projectInput => {
+                    if (projectInput) {
+                        return true;
+                    }
+                    else {
+                        console.log('Please enter the name of your project!');
+                        return false;
+                    }
+                }
             },
             {
                 type: 'input',
                 name: 'desc',
-                message: 'Describe your project: '
+                message: 'Describe your project: (Required)',
+                validate: descInput => {
+                    if (descInput) {
+                        return true;
+                    }
+                    else {
+                        console.log('Please enter a description of your project!');
+                        return false;
+                    }
+                }
             },
             {
                 type: 'input',
                 name: 'install',
-                message: 'Installation instructions: '
+                message: 'Installation instructions: (Required)',
+                validate: installInput => {
+                    if (installInput) {
+                        return true;
+                    }
+                    else {
+                        console.log('Please enter installation instructions!');
+                        return false;
+                    }
+                }
             },
             {
                 type: 'input',
                 name: 'usage',
-                message: 'Usage instructions: '
+                message: 'Usage instructions: (Required)',
+                validate: usageInput => {
+                    if (usageInput) {
+                        return true;
+                    }
+                    else {
+                        console.log('Please enter usage instructions!');
+                        return false;
+                    }
+                }
             },
             {
                 type: 'confirm',
                 name: 'license',
-                message: 'Please select license: ',
+                message: 'Please select license: (Required)',
                 default: false
             }, 
             {
                 type: 'input',
                 name: 'cont',
-                message: 'Contribution guidelines: '
+                message: 'Contribution guidelines: (Required)',
+                validate: contInput => {
+                    if (contInput) {
+                        return true;
+                    }
+                    else {
+                        console.log('Please enter contribution guidelines!');
+                        return false;
+                    }
+                }
             },
             {
                 type: 'input',
                 name: 'test',
-                message: 'Tests: '
+                message: 'Tests: (Required)',
+                validate: testsInput => {
+                    if (testsInput) {
+                        return true;
+                    }
+                    else {
+                        console.log('Please enter testing information!');
+                        return false;
+                    }
+                }
             },
             {
                 type: 'input',
                 name: 'username',
-                message: 'GitHub username: '
+                message: 'GitHub username: (Required)',
+                validate: usernameInput => {
+                    if (usernameInput) {
+                        return true;
+                    }
+                    else {
+                        console.log('Please enter your GitHub username!');
+                        return false;
+                    }
+                }
             },
             {
                 type: 'input',
                 name: 'link',
-                message: 'Link to GitHub profile: '
+                message: 'Link to GitHub profile: (Required)',
+                validate: linkInput => {
+                    if (linkInput) {
+                        return true;
+                    }
+                    else {
+                        console.log('Please enter the link to your GitHub profile!');
+                        return false;
+                    }
+                }
             },
             {
                 type: 'input',
                 name: 'email',
-                message: 'Email: '
+                message: 'Email: (Required)',
+                validate: emailInput => {
+                    if (emailInput) {
+                        return true;
+                    }
+                    else {
+                        console.log('Please enter your email address!');
+                        return false;
+                    }
+                }
             }
         ]);
     };
