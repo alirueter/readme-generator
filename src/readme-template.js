@@ -18,7 +18,6 @@ ${data.usage}
 ## License
 ${data.license}
 ${getBadge(data.license)}
-${getLink(data.license)}
 
 ## Contributing
 ${data.cont}
@@ -35,12 +34,12 @@ If you have any questions, you can contact me at ${data.email}.
 
 function getBadge(license) {
     if (license !== "None") {
-        return `[![License: ${license}](https://img.shields.io/badge/License-${license})]`
+        return `[![License: ${license}](https://img.shields.io/badge/License-${license})](https://opensource.org/licenses/${license})`
     } 
 };
 
-function getLink(link) {
-    if (link !=="None") {
-        return `[License Information](https://opensource.org/licenses/${link})`
-    }
-};
+// function getLink(link) {
+//     if (link !=="None") {
+//         return `[License Information](https://opensource.org/licenses/${link})`
+//     }
+// };

@@ -2,26 +2,25 @@
 # Project
 
 ## Description
-Description
+DESCR
 
 ## Table of Contents
 
 ## Installation
-Instructions
+INST
 
 ## Usage
-Instructions
+INST
 
 ## License
-Apache-2.0
-[![License: Apache-2.0](https://img.shields.io/badge/License-Apache-2.0)]
-[License Information](https://opensource.org/licenses/Apache-2.0)
+ISC
+[![License: ISC](https://img.shields.io/badge/License-ISC)](https://opensource.org/licenses/ISC)
 
 ## Contributing
-N/A
+NONE
 
 ## Tests
-N/A
+N?A
 
 ## Questions
 alirueter
