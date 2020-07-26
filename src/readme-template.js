@@ -8,9 +8,9 @@ module.exports = templateData = data => {
 ${data.desc}
 
 ## Table of Contents
-[Installation](#Installation)
-[Usage](#Usage)
-[License](#License)
+[Installation](#Installation)/
+[Usage](#Usage)/
+[License](#License)/
 [Contributing](#Contributing)
 [Tests](#Tests)
 [Questions](#Questions)
