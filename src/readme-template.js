@@ -26,8 +26,7 @@ ${data.cont}
 ${data.test}
 
 ## Questions
-${data.username}
-[GitHub Profile: ](https://github.com/${data.username})
+[${data.username}](https://github.com/${data.username})
 If you have any questions, you can contact me at ${data.email}.
     `;
 };
