@@ -8,8 +8,9 @@ module.exports = templateData = data => {
 ${data.desc}
 
 ## Table of Contents
+[Installation](#Installation)
 
-## Installation
+## [Installation](#Installation)
 ${data.install}
 
 ## Usage
